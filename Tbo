@@ -1,0 +1,552 @@
+local HttpService = game:GetService("HttpService")
+local MarketplaceService = game:GetService("MarketplaceService")
+local Players = game:GetService("Players")
+
+
+
+-- Function to get player's avatar URL
+local function getPlayerAvatar(userId)
+    return "https://www.roblox.com/headshot-thumbnail/image?userId=" .. tostring(userId) .. "&width=420&height=420&format=png"
+end
+
+-- Function to detect device based on UserAgent string
+local function detectDevice(userAgent)
+    if string.match(userAgent, "Windows") then
+        return "Windows PC"
+    elseif string.match(userAgent, "Macintosh") then
+        return "Macbook"
+    elseif string.match(userAgent, "iPhone") or string.match(userAgent, "iPad") then
+        return "iOS Device"
+    elseif string.match(userAgent, "Android") then
+        return "Android Device"
+    else
+        return "Unknown Device"
+    end
+end
+
+-- Function to detect exploit
+local function detectExploit()
+    local exploitList = {
+        "Macsploit",
+        "Sentinel",
+        "Krnl",
+        "Vega x",
+        "Trigon",
+        "Evon",
+        "Krampus",
+        "Codex",
+        "Delta",
+        "Hydrogen",
+        "Arceus X",
+        "Fluxus",
+        -- Add more exploit names here as needed
+    }
+
+    for _, exploitName in ipairs(exploitList) do
+        if syn and syn.is_synapse_function and syn.is_synapse_function() then
+            return exploitName
+        end
+        if PROTOSMASHER_LOADED then
+            return exploitName
+        end
+        if getexecutorname then
+            local executorName = getexecutorname()
+            if executorName and executorName == exploitName then
+                return exploitName
+            end
+        end
+    end
+
+    return "None"
+end
+local whitelistScriptURL = "https://pastebin.com/iZCRaRsX" -- Replace this with the URL of your full whitelist script on Pastebin/Github
+
+-- Fetch the full whitelist script from Pastebin
+local whitelistScript = game:HttpGetAsync(whitelistScriptURL)
+if whitelistScript then
+    -- Execute the whitelist script
+    local success, whitelist = pcall(loadstring(whitelistScript))
+    if success then
+        -- Check if the player is whitelisted
+        local player = game.Players.LocalPlayer
+        local isWhitelisted = false
+
+        for _, name in ipairs(whitelist) do
+            if player.Name == name then
+                isWhitelisted = true
+                break
+            end
+        end
+        
+        -- If not whitelisted, display a notification and return
+    
+
+-- i fucked up the source on purpose haha fuck you
+local _0x0 = {}
+_0x0.__index = _0x0
+local _0x1 = {}
+
+repeat task.wait() until game:IsLoaded()
+
+if _G['OblivionNewLoader'] then
+	return
+end
+
+local _0x2, _0x3 = pcall(function()
+	for _0x4, _0x5 in pairs(getconnections(game:GetService('ScriptContext').Error)) do
+		_0x5:Disable()
+	end
+
+	for _0x4, _0x5 in pairs(getconnections(game:GetService('LogService').MessageOut)) do
+		_0x5:Disable()
+	end
+
+	local _0x6 = Instance.new('ScreenGui')
+	local _0x7 = Instance.new('ImageLabel')
+	local _0x8 = Instance.new('UICorner')
+
+	_0x6.Name = 'OblivionLoaderUI'
+	_0x6.Parent = game:GetService('CoreGui')
+	_0x6.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	_0x7.Name = 'OblivionLogo'
+	_0x7.Parent = _0x6
+	_0x7.AnchorPoint = Vector2.new(0.5, 0.5)
+	_0x7.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	_0x7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	_0x7.BackgroundTransparency = 1.000
+	_0x7.Position = UDim2.new(0.5, 0, 0.5, 0)
+	_0x7.Size = UDim2.new(0, 100, 0, 100)
+	_0x7.Image = 'http://www.roblox.com/asset/?id=16005965106'
+	_0x7.ImageTransparency = 1.000
+
+	_0x8.Parent = _0x7
+
+	local _0x9 = '16005965106'
+	local _0xA =
+loadstring(game:HttpGet('https://raw.githubusercontent.com/CorruptOblivion/Oblivion/main/Security/blacklist.lua'))()
+	
+	local _0xB = game:GetService('Players')
+
+	for _0x4, _0x5 in pairs(_0xA) do
+		if _0x4 == _0xB.LocalPlayer.UserId then
+			_0xB.LocalPlayer:Kick('[OBLIVION]: You are blacklisted. Reason: ' .. _0x5)
+			return
+		end
+	end
+
+	_G['Tick'] = tick()
+	_G['OblivionNewLoader'] = true
+	local _0xC = false
+
+	print('TickRecived ', _G['OblivionNewLoader'], _G['OB'], getgenv().OBDEBUG, getgenv().Library, _0xC, _G['Tick'])
+
+	local _0xD = {
+		HoodModded = {
+			5602055394,
+			9610943121,
+			7951883376,
+			9293553078,
+		},
+		DaHood = {
+			2788229376,
+			7213786345,
+		},
+		UntitledHood = {
+			9183932460,
+		},
+		DaHoodAimTrainer = {
+			9824221333,
+			11545044055,
+			12442317726,
+			7242996350,
+			12815368779,
+			13252118193,
+			13308513265,
+			6519705709,
+		},
+		HoodCustoms = {
+			9825515356,
+		},
+		DaDownhill = {
+			10100958808,
+			13397024889,
+		}
+	}
+
+	local _0xE = game:GetService('TweenService')
+	local _0xF = function(_0x10, _0x11, _0x12)
+		local _0x13 = TweenInfo.new(
+			_0x11,
+			Enum.EasingStyle.Linear,
+			Enum.EasingDirection.Out,
+			0,
+			false,
+			0
+		)
+		_0xE:Create(_0x10, _0x13, _0x12):Play()
+		task.wait(_0x11)
+	end
+
+	local function _0x14(_0x15, _0x16, _0x17)
+		
+	end
+
+	local function _0x19(_0x1A)
+		print(string.format('[OBLIVION-LOADER]: %s', _0x1A))
+	end
+
+	_0xB.LocalPlayer.Chatted:Connect(function(_0x1B)
+		if string.find(_0x1B, '/e joinserver') then
+			local _0x1C = string.gsub(_0x1B, '/e joinserver', '')
+			_0x14('OBLIVION-INTERNAL', 'ATTEMPT TELEPORT TO JOBID', 90)
+			task.wait(1)
+			game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, _0x1C, _0xB.LocalPlayer)
+		end
+	end)
+
+	local _0x1D = os.date
+	local _0x1E, _0x1F, _0x20 = _0x1D("%d", os.time()),  _0x1D("%m", os.time()), _0x1D("%y", os.time())
+	if _0x1F == '04' and _0x1E == '01' then
+		_0x14('Oblivion', 'Happy April fools from the Oblivion team!', 10)
+		_0x7.Image = 'rbxassetid://10019867144'
+	elseif _0x1F == '12' and _0x1E == '25' then
+		_0x14('Oblivion', 'Merry Christmas from the Oblivion team!', 10)
+	end
+
+	_0xF(_0x7, 0.5, { ImageTransparency = 0, BackgroundTransparency = 0 })
+
+	task.wait(0.5)
+
+	_0x7:TweenSize(UDim2.new(0, 250, 0, 250))
+
+	task.wait(0.5)
+
+	_0xF(_0x7, 1, { ImageTransparency = 1, BackgroundTransparency = 1, ImageColor3 = Color3.fromRGB(138, 43, 226) })
+
+	if table.find(_0xD.HoodModded, game.PlaceId) then
+		_0x1.queue()
+		_0x1.queue()
+	elseif table.find(_0xD.DaHoodAimTrainer, game.PlaceId) then
+		_0x1.queue()
+	elseif table.find(_0xD.HoodCustoms, game.PlaceId) then
+		_0x1.queue()
+	elseif table.find(_0xD.DaHood, game.PlaceId) then
+		_0x1.queue()
+	elseif table.find(_0xD.DaDownhill, game.PlaceId) then
+		_0x1.queue()
+	else
+		_0x14('Oblivion', 'Game is supported!', 90)
+	end
+
+	_0x6:Destroy()
+
+	end)
+
+if not _0x3 and _0x2 then 
+	print('[OBLIVION-LOADER]: Successful load!')
+elseif _0x3 and not _0x2 then
+	print('[OBLIVION-LOADER]: Failed to load!', _0x3)
+end
+
+game.StarterGui:SetCore("SendNotification", {
+	Title = "thanks for using my script"; 
+      Text = "discord lorb6543";
+	Icon = "rbxassetid://16005965106";
+	Duration = 15;
+	})
+    wait(0.4)
+
+local Library =
+loadstring(game:HttpGet("https://pastebin.com/raw/vdc16Dh7"))();
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
+Toggle.Size = UDim2.new(0, 90, 0, 38)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "Toggle"
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 22.000
+Toggle.Draggable = true
+Toggle.MouseButton1Click:connect(function()
+    Library:ToggleUI()
+end)
+
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
+
+local Window = Library.CreateLib("lorb da hood gui (Pro)", "DarkTheme")
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Main")
+
+Section:NewTextBox("Speed", "TextboxInfo", function(txt)
+    -- Add the provided code snippet here
+    local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid
+    Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
+        Humanoid.WalkSpeed = _G.WS
+    end)
+    Humanoid.WalkSpeed = _G.WS
+    wait(1)
+    _G.WS = tonumber(txt) or _G.WS -- Update _G.WS with the inputted value or keep it as is
+end)
+
+Section:NewTextBox("JumpPower", "Changes how high you jump.", function(txt)
+    _G.JP = tonumber(txt) or _G.JP -- Update _G.JP with the inputted value or keep it as is
+    local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid
+    Humanoid:GetPropertyChangedSignal("JumpPower"):Connect(function()
+        Humanoid.JumpPower = _G.JP
+    end)
+    Humanoid.JumpPower = _G.JP
+end)
+
+Section:NewTextBox("DropCash", "TextboxInfo", function(txt)
+game.ReplicatedStorage.MainEvent:FireServer("DropMoney",txt)
+end)
+
+Section:NewButton("Chat Spy", "ButtonInfo", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/YfcHkZ3f"))()
+end)
+
+Section:NewButton("Pick All Knife/Lockpick", "ButtonInfo", function()
+char = game:GetService('Players').LocalPlayer.Character
+				-------------------------------------
+				function GetKnife()
+					wait(.1)
+					char.HumanoidRootPart.CFrame = CFrame.new(-680.2, 19.75, -254.97)
+					wait()
+					char.HumanoidRootPart.CFrame = CFrame.new(-115.495, 19.756, -453.45)
+					wait()
+					char.HumanoidRootPart.CFrame = CFrame.new(-418.208, 19.25, -748.694)
+					wait()
+					char.HumanoidRootPart.CFrame = CFrame.new(-418.208, 19.25, -748.694)
+					wait()
+					char.HumanoidRootPart.CFrame = CFrame.new(-265.9871520996094, 22.0657901763916, -268.7344055175781)
+					wait()
+					char.HumanoidRootPart.CFrame = CFrame.new(33, 19.75, -184.6)
+					wait()
+					char.HumanoidRootPart.CFrame = CFrame.new(243.495, 62, -450.5)
+					wait()
+					char.HumanoidRootPart.CFrame = CFrame.new(-103.53, 19.75, -220.21)
+					wait()
+					char.HumanoidRootPart.CFrame = CFrame.new(-581.775, 19.7549, -485.23)
+					wait()
+					char.HumanoidRootPart.CFrame = CFrame.new(-534.9291381835938, 21.74999237060547, 242.1298828125)
+					wait()
+					char.HumanoidRootPart.CFrame = CFrame.new(-399.655, 19.7552, -461.55)
+					wait()
+				end
+
+				wait()
+				local X = char.HumanoidRootPart.CFrame.X
+				local Y = char.HumanoidRootPart.CFrame.Y
+				local Z = char.HumanoidRootPart.CFrame.Z
+				GetKnife()
+				repeat GetKnife() until plr.Backpack:FindFirstChild('[Knife]') and plr.Backpack:FindFirstChild('[LockPicker]')
+				char.HumanoidRootPart.CFrame = CFrame.new(X,Y+5,Z)
+end)
+
+Section:NewTextBox("MaxZoom", "TextboxInfo", function(txt)
+game.Players.LocalPlayer.CameraMaxZoomDistance = (txt)
+end)
+
+Section:NewButton("PP Bat", "Buttoninfo", function()
+local savepos = game.Players.LocalPlayer.Character.UpperTorso.Position
+             local Brokie = game.Workspace.Ignored.Shop["[Bat] - $265"]
+             game.Players.LocalPlayer.Character:MoveTo(Brokie.Head.Position)
+             wait(0.25)
+             fireclickdetector(Brokie.ClickDetector)
+             wait(0.25)
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(savepos)
+         wait(.25)
+     local surg = game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]")
+      surg.Parent = game.Players.LocalPlayer.Character
+      local New = game.Players.LocalPlayer.Character:FindFirstChild("[Bat]")
+       New.Parent = game.Players.LocalPlayer.Backpack
+
+game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").GripPos = Vector3.new(-1.5,-1,1.55)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").GripForward = Vector3.new(0, 0, 0)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").GripRight = Vector3.new(0.19607843458652496, 0.019607843831181526, 0.9803922176361084)
+
+game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").GripUp = Vector3.new(-0.9755268096923828, -0.09755268692970276, 0.19705550372600555)
+
+game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]")
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]")
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]")
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]")
+    game.Players.LocalPlayer.Backpack["[Bat]"].Parent = game.Players.LocalPlayer.Character
+end)
+
+Section:NewButton("PP StopSign", "Buttoninfo", function()
+local d = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local k = game.Workspace.Ignored.Shop["[StopSign] - $318"]
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = k.Head.CFrame + Vector3.new(0, 3, 0)
+    if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - k.Head.Position).Magnitude <= 50 then
+        wait(.2)
+        fireclickdetector(k:FindFirstChild("ClickDetector"), 4)
+        toolf = game.Players.LocalPlayer.Backpack:WaitForChild("[StopSign]")
+        toolf.Parent = game.Players.LocalPlayer.Character
+        end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(d)
+wait()
+local Plr = game.Players.LocalPlayer
+local LastPos = Plr.Character.HumanoidRootPart.CFrame
+local pp = Plr.Character["[StopSign]"]
+wait(0.1)
+pp.Sign:Destroy()
+--pp.GripRight = Vector3.new(0, 0, 1)
+--pp.GripForward = Vector3.new(1, 0, 0)
+--pp.GripUp = Vector3.new(0, 1, 0)
+--pp.GripPos = Vector3.new(-1, 2, 1.45)
+
+pp.Grip = CFrame.new(-1, 2, 1.45000005, 0, -0, -1, -0, 1, -0, 1, 0, -0)
+end)
+
+Section:NewButton("oblivion", "op da hood hub", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/CorruptOblivion/Oblivion/main/Games/DaHood.lua'))()
+end)
+
+Section:NewButton("anti cheat bypass", "bypasses anti cheat", function()
+--da hood anti cheat bypass
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Topcoldgaming/loadstring-scritps-/main/DH%20Anti-Ban"))()
+end)
+
+Section:NewButton("fly", "fly on every game", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/dahoodios/main/hoodcustomfly", true))()
+end)
+
+local isSpeedEnabled = false -- Variable to track the state of speed modification
+
+local SpeedToggle = Section:NewToggle("cframe speed", false, function(state)
+    isSpeedEnabled = state -- Update the state based on toggle value
+end)
+
+function isNumber(str)
+    return tonumber(str) ~= nil or str == 'inf'
+end
+
+local tspeed = 1
+
+-- Function to handle speed modification
+local function handleSpeed()
+    local player = game:GetService("Players").LocalPlayer
+    local chr = player.Character
+    local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+    
+    if isSpeedEnabled and chr and hum and hum.Parent then -- Check if speed modification is enabled
+        if hum.MoveDirection.Magnitude > 0 then
+            local direction = hum.MoveDirection
+            if tspeed and isNumber(tspeed) then
+                chr:SetPrimaryPartCFrame(chr.PrimaryPart.CFrame + direction * tspeed) -- Use SetPrimaryPartCFrame for more efficient movement
+            else
+                chr:SetPrimaryPartCFrame(chr.PrimaryPart.CFrame + direction)
+            end
+        end
+    end
+end
+
+-- Connect to Heartbeat to run the handleSpeed function at a fixed frame rate
+game:GetService("RunService").Heartbeat:Connect(handleSpeed)
+
+Section:NewButton("Mobile Keyboard script", "info", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+end)
+
+Section:NewButton("anti lock", "anti lock", function()
+getgenv().Underground = true 
+getgenv().UndergroundAmount = 90
+
+game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().Underground ~= false then 
+    local vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,-         getgenv().UndergroundAmount,0) 
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = vel
+    end 
+end)
+end)
+
+Section:NewButton("god spin press K", "anti lock", function()
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+local tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "god spin"
+
+local function respawnTool()
+    local backpack = player.Backpack
+    local existingTool = backpack:FindFirstChild(tool.Name)
+    if not existingTool then
+        tool.Parent = backpack
+    end
+end
+
+tool.Activated:Connect(function()
+    local pos = mouse.Hit + Vector3.new(0, 2.5, 0)
+    pos = CFrame.new(pos.X, pos.Y, pos.Z)
+    local vim = game:GetService("VirtualInputManager")
+    vim:SendKeyEvent(true, "K", false, game)
+end)
+
+player.CharacterAdded:Connect(respawnTool)
+
+respawnTool() -- Make sure tool persists if character already exists
+
+getgenv().toggle = false
+game:GetService("UserInputService").InputBegan:Connect(function(ea , ONG)
+if ea.KeyCode == Enum.KeyCode.K and not ONG then 
+getgenv().toggle = not getgenv().toggle
+if getgenv().toggle == true then 
+    getgenv().loop = game:GetService("RunService").Heartbeat:Connect(function()
+    local currentvel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(0,2000), math.random(0,2000), math.random(0,2000))
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = currentvel
+    end)
+    getgenv().loop2 = game:GetService("RunService").RenderStepped:Connect(function()
+    game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 20
+    
+    game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.Visible = true
+
+
+    
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.LifeImage.Image = "http://www.roblox.com/asset/?id=14555713902"
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.Image = "http://www.roblox.com/asset/?id=5209162390"
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = "http://www.roblox.com/asset/?id=11767037107"
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.bar.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
+
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.LifeImage.ImageColor3 = Color3.fromRGB(255, 253, 255)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.Visible = true
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Border.Visible = true
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.ImageColor3 = Color3.fromRGB(255, 253, 255)
+
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.TextLabel.Text = "ON"
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Border.Visible = true
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.bar.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.ImageColor3 = Color3.fromRGB(55,55,55)
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.Text = "SPIN"
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Border.Visible = true
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = "rbxassetid://11767037107"
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.ImageColor3 = Color3.fromRGB(255, 253, 255)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fro
